@@ -14,7 +14,7 @@ namespace InstaMazz.Controllers
         }
 
         [HttpPost]
-        public IActionResult CrearPost(Publicaciones oPublicaciones)
+        public IActionResult CrearPost(PublicacionesModel oPublicaciones)
         {
 
             var cn = new Conexion();
@@ -40,7 +40,7 @@ namespace InstaMazz.Controllers
         }
 
         [HttpPost]
-        public IActionResult EliminarPost(Publicaciones oPublicacion)
+        public IActionResult EliminarPost(PublicacionesModel oPublicacion)
         {
             var cn = new Conexion();
             using (var conexion = new SqlConnection(cn.GetCadenaSQL()))

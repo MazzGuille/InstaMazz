@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace InstaMazz.Models
 {
-    public class Usuario
+    public class UsuarioModel
     {
         public int IdUsuario { get; set; }
 

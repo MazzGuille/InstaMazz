@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Text;
-using System.Collections;
 using System.Security.Cryptography;
 using System.Data;
 using InstaMazz.Models;
 using InstaMazz.Datos;
 using Microsoft.Data.SqlClient;
+using System;
 
 
 namespace InstaMazz.Controllers
@@ -24,7 +24,7 @@ namespace InstaMazz.Controllers
         }
 
         [HttpPost]
-        public IActionResult Registrar(Usuario oUsuario)
+        public IActionResult Registrar(UsuarioModel oUsuario)
         {
             bool registrado;
             string mensaje;
@@ -101,7 +101,7 @@ namespace InstaMazz.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(Usuario oUsuario)
+        public IActionResult Login(UsuarioModel oUsuario)
         {
             oUsuario.Contraseña = ConvertirSHA256(oUsuario.Contraseña);
 
@@ -125,6 +125,7 @@ namespace InstaMazz.Controllers
 
             if (oUsuario.IdUsuario != 0)
             {
+
                 //ISession session = HttpContext.Session;
                 return RedirectToAction("Index", "Home");
             }

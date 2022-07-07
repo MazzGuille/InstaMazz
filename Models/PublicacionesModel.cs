@@ -1,6 +1,6 @@
 ﻿namespace InstaMazz.Models
 {
-    public class Publicaciones
+    public class PublicacionesModel
     {
         public int IdPost { get; set; }
         public int IdUsuario { get; set; }
