@@ -57,6 +57,12 @@ namespace InstaMazz.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+
+        public IActionResult ListarVista()
+        {
+
+            return View(Listar());
+        }
         public List<PublicacionesModel> Listar()
         {
             var oLista = new List<PublicacionesModel>();

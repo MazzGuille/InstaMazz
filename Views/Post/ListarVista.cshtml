@@ -1,12 +1,12 @@
 ﻿
 @{
-    ViewData["Title"] = "Listar";
+    ViewData["Title"] = "ListarVista";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Listar</h1>
+<div>
 
-<  <table class="table table-bordered">
+<table class="table table-bordered">
        <thead>
            <tr>
                <th>IdPost</th>
@@ -24,7 +24,7 @@
                  <td>@item.IdPost</td>
                  <td>@item.IdUsuario</td>
                  <td>@item.UrlImg</td>
-                 <td>@item.descripcion</td>                 
+                 <td>@item.Descripcion</td>                 
                  <td>                      
                      <a asp-action="EliminarPost" asp-controller="Post" class="btn btn-danger btn-sm" asp-route-IdPost="@item.IdPost"><i class="bi bi-dash-circle"></i> Eliminar</a> 
                  </td>
@@ -33,3 +33,5 @@
        </tbody>          
        
    </table>
+</div>
+
