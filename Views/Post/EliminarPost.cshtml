@@ -6,21 +6,7 @@
 
 <h1>Eliminar Publicacion</h1>
 
- <table class="table table-bordered">
-    
-       <tbody>
-           @foreach(var item in Model)
-           {
-             <tr>
-                 <td>@item.IdPost</td>
-                 <td>
-                     <a asp-action="EliminarPost" asp-controller="post" class="btn btn-danger btn-sm" asp-route-IdContacto="@item.IdContacto"><i class="bi bi-person-x"></i> Eliminar</a> 
-                 </td>
-             </tr>  
-           }
-       </tbody>          
-       
-   </table>
+ 
 
 
 
