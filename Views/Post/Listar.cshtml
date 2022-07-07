@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Listar</h1>
+
+<  <table class="table table-bordered">
+       <thead>
+           <tr>
+               <th>IdPost</th>
+               <th>IdUsuario</th>
+               <th>UrlImg</th>
+               <th>descripcion</th>
+               
+               <th></th>
+           </tr>
+       </thead>
+       <tbody>
+           @foreach(var item in Model)
+           {
+             <tr>
+                 <td>@item.IdPost</td>
+                 <td>@item.IdUsuario</td>
+                 <td>@item.UrlImg</td>
+                 <td>@item.descripcion</td>                 
+                 <td>                      
+                     <a asp-action="EliminarPost" asp-controller="Post" class="btn btn-danger btn-sm" asp-route-IdPost="@item.IdPost"><i class="bi bi-dash-circle"></i> Eliminar</a> 
+                 </td>
+             </tr>  
+           }
+       </tbody>          
+       
+   </table>

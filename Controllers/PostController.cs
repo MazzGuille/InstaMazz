@@ -36,7 +36,7 @@ namespace InstaMazz.Controllers
 
         public IActionResult EliminarPost()
         {
-            return View();
+            return RedirectToAction("Listar", "Post");
         }
 
         [HttpPost]
@@ -55,6 +55,36 @@ namespace InstaMazz.Controllers
 
 
             return RedirectToAction("Index", "Home");
+        }
+
+        public List<PublicacionesModel> Listar()
+        {
+            var oLista = new List<PublicacionesModel>();
+
+            var cn = new Conexion();
+
+            using (var conexion = new SqlConnection(cn.GetCadenaSQL()))
+            {
+                conexion.Open();
+                SqlCommand cmd = new SqlCommand("sp_Listar", conexion);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                using (var dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        oLista.Add(new PublicacionesModel
+                        {
+                            IdPost = Convert.ToInt32(dr["IdPost"]),
+                            IdUsuario = Convert.ToInt32(dr["IdUsuario"]),
+                            UrlImg = dr["UrlImg"].ToString(),
+                            Descripcion = dr["Descripcion"].ToString()
+                        });
+                    }
+                }
+            }
+            return oLista;
         }
     }
 }
