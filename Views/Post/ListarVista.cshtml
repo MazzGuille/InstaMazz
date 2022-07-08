@@ -9,8 +9,8 @@
 <table class="table table-bordered">
        <thead>
            <tr>
-               <th>IdPost</th>
-               <th>IdUsuario</th>
+               <th class="hidden">IdPost</th>
+               <th class="hidden">IdUsuario</th>
                <th>UrlImg</th>
                <th>descripcion</th>
                
@@ -22,11 +22,11 @@
            {
              <tr>
                  <td>@item.IdPost</td>
-                 <td>@item.IdUsuario</td>
+                 <td class="hidden">@item.IdUsuario</td>
                  <td>@item.UrlImg</td>
                  <td>@item.Descripcion</td>                 
                  <td>                      
-                     <a asp-action="EliminarPost" asp-controller="Post" class="btn btn-danger btn-sm" asp-route-IdPost="@item.IdPost"><i class="bi bi-dash-circle"></i> Eliminar</a> 
+                     <a asp-action="EliminarPost" asp-controller="Post" class="btn btn-danger btn-sm" asp-route-IdPost="@item.IdPost"><i class="bi bi-person-x"></i> Eliminar</a>
                  </td>
              </tr>  
            }

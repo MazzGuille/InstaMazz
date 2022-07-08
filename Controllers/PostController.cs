@@ -36,7 +36,7 @@ namespace InstaMazz.Controllers
 
         public IActionResult EliminarPost()
         {
-            return RedirectToAction("Listar", "Post");
+            return View();
         }
 
         [HttpPost]
@@ -54,7 +54,7 @@ namespace InstaMazz.Controllers
             }
 
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("ListarVista", "Post");
         }
 
 

@@ -1,10 +1,20 @@
-﻿
+﻿@model PublicacionesModel
 @{
     ViewData["Title"] = "EliminarPost";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Eliminar Publicacion</h1>
+
+   <form action="@Url.Action("EliminarPost", "Post")" method="post">
+        <input asp-for="IdPost"  class="form-control">
+        
+        <div class="alert alert-danger" role="alert">
+            ¿Deseas eliminar la publicacion?
+        </div>
+            
+      <button type="submit" class="btn btn-danger"><i class="bi bi-person-x"></i> Eliminar</button>
+    </form>
 
  
 

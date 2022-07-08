@@ -1,10 +1,9 @@
 ﻿body {
     background-color: #E5E5E5;
-    overflow-x: hidden;
 }
 
 
-.wrapper{
+.wrapper {
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -46,7 +45,7 @@
     margin-bottom: 70px;
 }
 
-   
+
 
 
 .port-image {
@@ -57,14 +56,19 @@
     margin-bottom: 30px;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
 }
 
-.botton-container{
+.botton-container {
     display: flex;
     gap: 2rem;
     justify-content: center;
     align-items: center;
+}
+
+
+.hidden{
+    display: none;
 }
